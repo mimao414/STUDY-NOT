@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="智光商職 資料處理科 高一上學期《多媒體製作與應用》互動式學習手冊與段考重點速記網站，包含三大計算機、視覺實驗室與模擬測驗。">
+  <title>智光商職 資處一仁｜多媒體製作與應用 學習數位通</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700;900&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+  <!-- 頂部頂部狀態條與導覽列 -->
+  <header class="site-header" id="topHeader">
+    <div class="header-container">
+      <div class="brand-group">
+        <div class="school-badge">
+          <span class="badge-text">智光資處</span>
+          <span class="class-tag">一仁專用</span>
+        </div>
+        <div class="brand-title-wrap">
+          <h1 class="brand-title">多媒體製作與應用</h1>
+          <span class="brand-sub">高一上學期 核心筆記 · 互動實驗室 · 段考衝刺</span>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <!-- 搜尋框 -->
+        <div class="search-box">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="globalSearchInput" placeholder="搜尋關鍵字 (例: DPI, MIDI, 遮色片, CC)..." aria-label="搜尋手冊關鍵字">
+          <button id="clearSearchBtn" class="clear-btn" title="清除搜尋" style="display:none;">&times;</button>
+        </div>
+
+        <!-- 主題切換與列印按鈕 -->
+        <button id="themeToggleBtn" class="action-icon-btn" title="切換深色/淺色主題" aria-label="切換主題">
+          <span class="theme-icon sun-icon">☀️</span>
+          <span class="theme-icon moon-icon">🌙</span>
+        </button>
+        <button id="printBtn" class="action-btn-outline" title="列印或另存為 PDF 重點清單">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+            <rect x="6" y="14" width="12" height="8"></rect>
+          </svg>
+          <span>列印手冊</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- 快速分類導航列 (Tab Navigation) -->
+    <nav class="nav-scroller" aria-label="章節導覽">
+      <div class="nav-pills">
+        <a href="#units" class="nav-pill active" data-target="units">
+          <span class="pill-icon">📚</span>
+          <span>六大核心單元</span>
+        </a>
+        <a href="#calculators" class="nav-pill" data-target="calculators">
+          <span class="pill-icon">🧮</span>
+          <span>段考三大計算機</span>
+        </a>
+        <a href="#interactive-lab" class="nav-pill" data-target="interactive-lab">
+          <span class="pill-icon">🔬</span>
+          <span>觀念實驗室</span>
+        </a>
+        <a href="#quiz-zone" class="nav-pill" data-target="quiz-zone">
+          <span class="pill-icon">🎯</span>
+          <span>段考實戰刷題</span>
+        </a>
+        <a href="#cheat-sheet" class="nav-pill" data-target="cheat-sheet">
+          <span class="pill-icon">⚡</span>
+          <span>考前秒殺口訣</span>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- 主內容區 -->
+  <main class="main-content" id="mainContainer">
+
+    <!-- 歡迎橫幅英雄區 (Hero Banner) -->
+    <section class="hero-section">
+      <div class="hero-glow"></div>
+      <div class="hero-content">
+        <div class="welcome-pill">🎓 108 課綱技術型高中 · 商業與管理群</div>
+        <h2 class="hero-headline">資處一仁 多媒體學習神器</h2>
+        <p class="hero-desc">
+          專為智光商職資料處理科一年級打造！告別死背，整合<strong>多媒體概論、數位文字、影像、音訊、動畫視訊與創用 CC</strong>。包含段考必考算式即時計算機、直觀實驗室與高頻段考題庫。
+        </p>
+        <div class="quick-stats-grid">
+          <div class="stat-card">
+            <span class="stat-num">6 大</span>
+            <span class="stat-label">課程核心單元</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">3 臺</span>
+            <span class="stat-label">段考專用計算機</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">3 種</span>
+            <span class="stat-label">視覺動態實驗</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">15+ 題</span>
+            <span class="stat-label">即時回饋模擬測驗</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 單元一~六 知識卡片區 -->
+    <section id="units" class="content-section">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-badge">UNIT GUIDE</span>
+          <h2 class="section-title">六大核心主題 深入導覽</h2>
+        </div>
+        <p class="section-subtitle">點擊卡片或右側展開按鈕可快速查閱詳細觀念與重點對照。</p>
+      </div>
+
+      <!-- 單元卡片網格 -->
+      <div class="units-grid">
+
+        <!-- Card 1: 多媒體要素與系統架構 -->
+        <article class="unit-card" id="unit-1" data-keywords="多媒體 五大要素 文字 影像 音訊 動畫 視訊 數位化 整合性 互動性 非線性 視覺暫留">
+          <div class="unit-header">
+            <div class="unit-num-tag">UNIT 01</div>
+            <h3 class="unit-title">多媒體概論與系統特性</h3>
+            <span class="unit-icon">🌐</span>
+          </div>
+          <div class="unit-body">
+            <p class="unit-intro">多媒體指結合多種媒體傳播形式，具備<strong>數位化、整合性、互動性</strong>與<strong>非線性</strong>四大核心特質。</p>
+            
+            <div class="elements-table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>媒體要素</th>
+                    <th>特點說明</th>
+                    <th>容量比例</th>
+                    <th>主要應用</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>文字 (Text)</strong></td>
+                    <td>精確傳遞概念、佔用容量最小</td>
+                    <td><span class="tag-pill tag-green">最小</span></td>
+                    <td>書籍、選單、註釋</td>
+                  </tr>
+                  <tr>
+                    <td><strong>影像 (Image)</strong></td>
+                    <td>靜態視覺、色彩豐富、吸引目光</td>
+                    <td><span class="tag-pill tag-blue">中等</span></td>
+                    <td>相片、Banner、插畫</td>
+                  </tr>
+                  <tr>
+                    <td><strong>音訊 (Audio)</strong></td>
+                    <td>具時間連續性、情感與氣氛烘托</td>
+                    <td><span class="tag-pill tag-blue">中等</span></td>
+                    <td>背景配樂、旁白音效</td>
+                  </tr>
+                  <tr>
+                    <td><strong>動畫 (Animation)</strong></td>
+                    <td>利用人眼「視覺暫留」之人工連續畫面</td>
+                    <td><span class="tag-pill tag-purple">中~大</span></td>
+                    <td>網頁特效、教學模擬</td>
+                  </tr>
+                  <tr>
+                    <td><strong>視訊 (Video)</strong></td>
+                    <td>連續真實拍攝訊框與多聲道聲音整合</td>
+                    <td><span class="tag-pill tag-red">最大</span></td>
+                    <td>宣傳影片、電影、短影音</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="highlight-box">
+              <span class="box-icon">💡</span>
+              <div>
+                <strong>段考高頻題：</strong>「多媒體」最關鍵的本質在於<strong>「互動性」</strong>，使使用者由被動接收者變為主動操控者；而<strong>「非線性」</strong>指使用者可跳轉至指定章節，不用從頭到尾照順序播放。
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2: 數位文字與排版 -->
+        <article class="unit-card" id="unit-2" data-keywords="數位文字 襯線體 Serif 無襯線體 Sans-Serif 點陣字 向量字 TrueType OpenType 印刷 螢幕 標楷體 新細明體 微軟正黑體">
+          <div class="unit-header">
+            <div class="unit-num-tag">UNIT 02</div>
+            <h3 class="unit-title">數位文字與排版設計</h3>
+            <span class="unit-icon">✍️</span>
+          </div>
+          <div class="unit-body">
+            <div class="compare-columns">
+              <div class="compare-box">
+                <div class="compare-title serif-sample">襯線體 (Serif)</div>
+                <ul class="compare-list">
+                  <li><strong>特徵</strong>：筆畫末端有修飾角線、粗細落差明顯。</li>
+                  <li><strong>常見字型</strong>：中文（新細明體、標楷體）、英文（Times New Roman、Georgia）。</li>
+                  <li><strong>適用場合</strong>：<strong>大量紙本印刷出版物、長篇文章</strong>。修飾角線能導引視線水平移動，減少長時間閱讀疲勞。</li>
+                </ul>
+              </div>
+              <div class="compare-box">
+                <div class="compare-title sans-sample">無襯線體 (Sans-Serif)</div>
+                <ul class="compare-list">
+                  <li><strong>特徵</strong>：筆畫簡約乾淨、端點平直、線條均勻。</li>
+                  <li><strong>常見字型</strong>：中文（微軟正黑體、思源黑體）、英文（Arial、Helvetica）。</li>
+                  <li><strong>適用場合</strong>：<strong>螢幕顯示、簡報投影片、看板大標題、手機 UI</strong>。低解析度螢幕依然清楚易讀。</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="key-callout">
+              <div class="callout-badge">字型產生技術</div>
+              <p><strong>點陣字 (Bitmap Font)</strong>：以像素網格組字，放大必出現鋸齒。</p>
+              <p><strong>向量字 (Vector Font)</strong>：以數學幾何路徑（貝茲曲線）繪製，<strong>任意放大縮小皆完美平滑</strong>（主流格式：<code>.ttf</code>、<code>.otf</code>）。</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3: 數位影像處理 (核心大章) -->
+        <article class="unit-card featured-unit" id="unit-3" data-keywords="點陣圖 向量圖 像素 Pixel RGB CMYK 加色法 減色法 色彩深度 24bit 全彩 PPI DPI JPG PNG GIF SVG WebP Photoshop 遮色片 圖層 容差度">
+          <div class="unit-header">
+            <div class="unit-num-tag">UNIT 03 · 必考核心</div>
+            <h3 class="unit-title">數位影像處理與檔案格式</h3>
+            <span class="unit-icon">🖼️</span>
+          </div>
+          <div class="unit-body">
+            
+            <!-- 點陣 vs 向量 -->
+            <h4 class="sub-heading">1. 點陣圖 (Bitmap) vs 向量圖 (Vector)</h4>
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>比較維度</th>
+                    <th>點陣圖 (Bitmap / Raster)</th>
+                    <th>向量圖 (Vector)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>組成基礎</strong></td>
+                    <td>二維網格排列的「像素點 (Pixels)」</td>
+                    <td>點、線、多邊形等「數學幾何方程式」</td>
+                  </tr>
+                  <tr>
+                    <td><strong>放大結果</strong></td>
+                    <td><span class="text-danger font-bold">邊緣破圖、鋸齒模糊 (失真)</span></td>
+                    <td><span class="text-success font-bold">永遠平滑清晰 (無失真)</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>色彩表現</strong></td>
+                    <td>極佳！漸層與光影自然細緻（如真人相片）</td>
+                    <td>較生硬，多為色塊與平滑漸層，不宜真實相片</td>
+                  </tr>
+                  <tr>
+                    <td><strong>檔案格式</strong></td>
+                    <td>JPG, PNG, GIF, BMP, TIFF, WebP</td>
+                    <td>SVG, AI, EPS, CDR</td>
+                  </tr>
+                  <tr>
+                    <td><strong>常見應用</strong></td>
+                    <td>數位相機照片、掃描影像、網頁橫幅</td>
+                    <td>商標 Logo、圖示 Icon、動漫插畫、字型</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- 色彩模式 -->
+            <h4 class="sub-heading" style="margin-top: 1.5rem;">2. 兩大色彩模式：RGB 與 CMYK</h4>
+            <div class="grid-2-cols">
+              <div class="color-mode-card rgb-card">
+                <div class="mode-header">
+                  <span class="mode-title">RGB 色彩模式</span>
+                  <span class="mode-tag">光的三原色 · 加色法</span>
+                </div>
+                <p><strong>三原色</strong>：紅 (Red)、綠 (Green)、藍 (Blue)。</p>
+                <p><strong>特性</strong>：各數值範圍 $0 \sim 255$。三色光全部疊加時為<strong>純白色 $(255, 255, 255)$</strong>，全為 0 時為黑。</p>
+                <p><strong>應用</strong>：<strong>螢幕、電視、投影機、手機</strong>（任何會自己發光的顯示裝置）。</p>
+              </div>
+
+              <div class="color-mode-card cmyk-card">
+                <div class="mode-header">
+                  <span class="mode-title">CMYK 色彩模式</span>
+                  <span class="mode-tag">印刷四原色 · 減色法</span>
+                </div>
+                <p><strong>四原色</strong>：青 (Cyan)、洋紅 (Magenta)、黃 (Yellow)、黑 (Key/Black)。</p>
+                <p><strong>特性</strong>：油墨吸收光線，疊加越多光線被反射越少，顏色越深（全疊加為濁褐色，故補入 K 墨印出純黑）。</p>
+                <p><strong>應用</strong>：<strong>紙張印刷品、海報輸出、DM 傳單、名片印製</strong>。</p>
+              </div>
+            </div>
+
+            <!-- 常用格式特性表 -->
+            <h4 class="sub-heading" style="margin-top: 1.5rem;">3. 常用影像檔案格式對決</h4>
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>格式</th>
+                    <th>壓縮型態</th>
+                    <th>最大色彩數</th>
+                    <th>支援透明</th>
+                    <th>支援動態</th>
+                    <th>適用情境與考試盲點</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>JPEG / JPG</strong></td>
+                    <td>破壞性 (Lossy)</td>
+                    <td>24-bit (1677萬色)</td>
+                    <td><span class="badge-no">否</span></td>
+                    <td><span class="badge-no">否</span></td>
+                    <td>壓縮比極高、檔案小，照片首選；<strong>絕對不能透明</strong></td>
+                  </tr>
+                  <tr>
+                    <td><strong>PNG</strong></td>
+                    <td>非破壞性 (Lossless)</td>
+                    <td>8-bit / 24-bit</td>
+                    <td><span class="badge-yes">是 (Alpha半透明)</span></td>
+                    <td><span class="badge-no">否</span></td>
+                    <td>邊緣銳利不失真，網頁去背按鈕與透明素材首選</td>
+                  </tr>
+                  <tr>
+                    <td><strong>GIF</strong></td>
+                    <td>非破壞性 (LZW)</td>
+                    <td>8-bit (僅256色)</td>
+                    <td><span class="badge-yes">是 (單色透明)</span></td>
+                    <td><span class="badge-yes">是</span></td>
+                    <td>支援簡易逐格動畫，但因色彩少不適合漸層照片</td>
+                  </tr>
+                  <tr>
+                    <td><strong>SVG</strong></td>
+                    <td>向量標記 (XML)</td>
+                    <td>向量無限制</td>
+                    <td><span class="badge-yes">是</span></td>
+                    <td><span class="badge-yes">是</span></td>
+                    <td>現代 RWD 響應式網頁標準，高解析螢幕任意縮放皆清晰</td>
+                  </tr>
+                  <tr>
+                    <td><strong>WebP</strong></td>
+                    <td>支援失真/非失真</td>
+                    <td>24-bit / 32-bit</td>
+                    <td><span class="badge-yes">是</span></td>
+                    <td><span class="badge-yes">是</span></td>
+                    <td>Google 開發的新一代網頁格式，比 JPG/PNG 減少 30% 體積</td>
+                  </tr>
+                  <tr>
+                    <td><strong>PSD</strong></td>
+                    <td>專案無失真</td>
+                    <td>完整保留</td>
+                    <td><span class="badge-yes">是</span></td>
+                    <td><span class="badge-no">否</span></td>
+                    <td>Photoshop 原始檔，完整保留圖層、遮色片與路徑</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- PS 實作考點 -->
+            <div class="highlight-box" style="margin-top: 1rem;">
+              <span class="box-icon">🎨</span>
+              <div>
+                <strong>Photoshop 必考實習技法：</strong>
+                <ul style="margin: 0.3rem 0 0 1.2rem; padding: 0;">
+                  <li><strong>圖層 (Layers)</strong>：越上方的圖層會蓋住下方的圖層。</li>
+                  <li><strong>圖層遮色片 (Layer Mask)</strong>：非破壞性隱藏。口訣：<strong>「白顯、黑遮、灰半透」</strong>（塗黑代表隱藏該處露出底層，絕不是塗黑顏料！）。</li>
+                  <li><strong>魔術棒工具</strong>：靠<strong>容差度 (Tolerance)</strong> 判斷像素顏色相近程度。</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- Card 4: 數位音訊 -->
+        <article class="unit-card" id="unit-4" data-keywords="數位音訊 聲音三要素 響度 振幅 音調 頻率 音色 波形 類比轉數位 ADC 取樣 量化 編碼 奈奎斯特 取樣定理 WAV MP3 AAC FLAC MIDI">
+          <div class="unit-header">
+            <div class="unit-num-tag">UNIT 04</div>
+            <h3 class="unit-title">數位音訊處理與格式辨析</h3>
+            <span class="unit-icon">🎵</span>
+          </div>
+          <div class="unit-body">
+            
+            <div class="grid-3-cols">
+              <div class="mini-card">
+                <span class="mini-tag">物理屬性：振幅</span>
+                <h4>響度 (Loudness)</h4>
+                <p>音波震動幅度大小，單位為<strong>分貝 (dB)</strong>。振幅越大聲音越響亮。</p>
+              </div>
+              <div class="mini-card">
+                <span class="mini-tag">物理屬性：頻率</span>
+                <h4>音調 (Pitch)</h4>
+                <p>音波每秒振動次數，單位為<strong>赫茲 (Hz)</strong>。頻率越高音調越尖銳。</p>
+              </div>
+              <div class="mini-card">
+                <span class="mini-tag">物理屬性：波形</span>
+                <h4>音色 (Timbre)</h4>
+                <p>由音波複雜波形與泛音決定。人耳能分辨鋼琴與小提琴即因音色不同。</p>
+              </div>
+            </div>
+
+            <div class="process-flow-wrap">
+              <div class="flow-step">
+                <div class="step-num">1</div>
+                <div class="step-info">
+                  <strong>取樣 (Sampling)</strong>
+                  <span>每秒固定時間間隔擷取離散振幅點數（如 $44.1\text{ kHz}$）</span>
+                </div>
+              </div>
+              <div class="flow-arrow">➔</div>
+              <div class="flow-step">
+                <div class="step-num">2</div>
+                <div class="step-info">
+                  <strong>量化 (Quantization)</strong>
+                  <span>將連續振幅轉為有限階層的數值（如 16-bit 有 65536 階）</span>
+                </div>
+              </div>
+              <div class="flow-arrow">➔</div>
+              <div class="flow-step">
+                <div class="step-num">3</div>
+                <div class="step-info">
+                  <strong>編碼 (Encoding)</strong>
+                  <span>將量化後的整數值換算為電腦能儲存的 0 與 1 二進位碼</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="callout-grid">
+              <div class="key-callout">
+                <div class="callout-badge">奈奎斯特定理 (Nyquist Theorem)</div>
+                <p>取樣頻率必須<strong>大於最高音訊頻率的 2 倍</strong>才能完整不失真還原！<br>
+                人耳聽覺範圍為 $20\text{ Hz} \sim 20\text{ kHz}$，最高頻率為 $20\text{ kHz}$，因此 CD 規格取樣頻率訂為 $44.1\text{ kHz}$（$> 20 \times 2 = 40\text{ kHz}$）。</p>
+              </div>
+
+              <div class="key-callout">
+                <div class="callout-badge">MIDI 格式大陷阱 (`.mid`)</div>
+                <p><strong>MIDI 不是真正的聲音錄音！</strong>它只記錄樂譜的演奏指令（哪顆音符、鍵盤力道、音長）。因此容量極小（幾十 KB），且<strong>無法儲存真人講話唱歌的歌聲</strong>！</p>
+              </div>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- Card 5: 動畫與視訊基礎 -->
+        <article class="unit-card" id="unit-5" data-keywords="動畫 視訊 視覺暫留 影格率 fps 24fps 30fps 60fps 關鍵影格 補間動畫 H.264 MP4 MOV AVI">
+          <div class="unit-header">
+            <div class="unit-num-tag">UNIT 05</div>
+            <h3 class="unit-title">動畫原理與視訊規格</h3>
+            <span class="unit-icon">🎬</span>
+          </div>
+          <div class="unit-body">
+            <div class="grid-2-cols">
+              <div class="text-block">
+                <h4>視覺暫留 (Persistence of Vision)</h4>
+                <p>物體影像消失後，人眼視網膜仍會保留殘影約 <strong>1/16 秒</strong>。只要連續靜態圖片更換速度大於此頻率，腦部便會產生連續運動的錯覺。</p>
+                <div class="fps-list">
+                  <span class="fps-chip">電影標準：<strong>24 fps</strong></span>
+                  <span class="fps-chip">電視視訊：<strong>30 / 60 fps</strong></span>
+                  <span class="fps-chip">電競流暢：<strong>120+ fps</strong></span>
+                </div>
+              </div>
+
+              <div class="text-block">
+                <h4>核心製作觀念</h4>
+                <ul>
+                  <li><strong>關鍵影格 (Keyframe)</strong>：定義動作轉折、大小或位置變化的起訖重要訊框。</li>
+                  <li><strong>補間動畫 (Tweening)</strong>：由電腦自動計算兩關鍵影格間所有平滑過渡幀。</li>
+                  <li><strong>主流編碼與容器</strong>：H.264/AVC、H.265/HEVC 編碼；MP4 為當前相容性最高之視訊容器。</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 6: 智慧財產權與創用 CC -->
+        <article class="unit-card" id="unit-6" data-keywords="智慧財產權 著作權 人格權 財產權 50年 創用CC CC授權 姓名標示 BY 非商業性 NC 禁止改作 ND 相同方式分享 SA 互斥">
+          <div class="unit-header">
+            <div class="unit-num-tag">UNIT 06 · 法律與倫理</div>
+            <h3 class="unit-title">智財權法規與創用 CC 核心</h3>
+            <span class="unit-icon">⚖️</span>
+          </div>
+          <div class="unit-body">
+            <div class="compare-columns">
+              <div class="compare-box">
+                <div class="compare-title">著作人格權（專屬創作者）</div>
+                <ul class="compare-list">
+                  <li><strong>三大權利</strong>：公開發表權、姓名表示權、同一性保持權（禁止歪曲竄改）。</li>
+                  <li><strong>特性</strong>：<strong>不得轉讓或繼承</strong>，隨作者身故後仍受保護。</li>
+                </ul>
+              </div>
+              <div class="compare-box">
+                <div class="compare-title">著作財產權（經濟效益）</div>
+                <ul class="compare-list">
+                  <li><strong>權利範圍</strong>：重製、改作、公開傳輸、公開播送等。</li>
+                  <li><strong>特性</strong>：<strong>可轉讓、授權、繼承</strong>；保護期限至<strong>作者終身加死後 50 年</strong>。</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- CC 四大元素 -->
+            <h4 class="sub-heading" style="margin-top: 1.5rem;">創用 CC (Creative Commons) 四大授權元素</h4>
+            <div class="cc-badge-grid">
+              <div class="cc-card">
+                <div class="cc-symbol">BY</div>
+                <div class="cc-name">姓名標示 (Attribution)</div>
+                <div class="cc-desc">必須標註原作者姓名、作品名稱與出處連結。<strong>（最基本元素，所有條款必備）</strong></div>
+              </div>
+              <div class="cc-card">
+                <div class="cc-symbol">NC</div>
+                <div class="cc-name">非商業性 (Non-Commercial)</div>
+                <div class="cc-desc">不得以營利、收取對價或商業廣告為目的進行使用。</div>
+              </div>
+              <div class="cc-card">
+                <div class="cc-symbol">ND</div>
+                <div class="cc-name">禁止改作 (No Derivatives)</div>
+                <div class="cc-desc">只能原汁原味使用，<strong>不得剪輯、修改、混音或改編成新作品</strong>。</div>
+              </div>
+              <div class="cc-card">
+                <div class="cc-symbol">SA</div>
+                <div class="cc-name">相同方式分享 (Share-Alike)</div>
+                <div class="cc-desc">若修改作品產生衍生著作，<strong>必須採用完全相同的條款</strong>公開釋出。</div>
+              </div>
+            </div>
+
+            <div class="alert-box alert-warning" style="margin-top: 1rem;">
+              <span class="alert-icon">⚠️</span>
+              <div>
+                <strong>段考必殺防雷陷阱：</strong>
+                <strong>ND（禁止改作）與 SA（相同方式分享）永遠互斥，絕不能同時存在！</strong><br>
+                因為 ND 規定「禁止修改」，既然不能修改，就根本不會產生衍生作品，何來「修改後以同條款分享 (SA)」？若考題選項出現 <code>CC BY-ND-SA</code>，請立刻判斷為錯誤！
+              </div>
+            </div>
+
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- 段考三大計算機專區 (Calculators Section) -->
+    <section id="calculators" class="content-section">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-badge">INTERACTIVE TOOLS</span>
+          <h2 class="section-title">段考必考三大實戰計算機</h2>
+        </div>
+        <p class="section-subtitle">輸入數值即時計算出正確答案，並同步展示詳細計算步驟與換算推導！</p>
+      </div>
+
+      <div class="calculators-grid">
+
+        <!-- Calculator 1: 點陣圖檔案容量計算器 -->
+        <div class="calc-card" id="calc-image">
+          <div class="calc-header">
+            <span class="calc-badge">題型 01</span>
+            <h3>點陣圖未壓縮檔案容量計算器</h3>
+            <p class="calc-formula">公式：$\text{Bytes} = (\text{長} \times \text{寬} \times \text{色彩深度}) \div 8$</p>
+          </div>
+
+          <div class="calc-form">
+            <div class="form-row">
+              <label for="imgWidth">水平寬度 (像素 px)</label>
+              <input type="number" id="imgWidth" value="1024" min="1" step="1">
+            </div>
+            <div class="form-row">
+              <label for="imgHeight">垂直高度 (像素 px)</label>
+              <input type="number" id="imgHeight" value="768" min="1" step="1">
+            </div>
+            <div class="form-row">
+              <label for="imgColorDepth">色彩深度 (Bit Depth)</label>
+              <select id="imgColorDepth">
+                <option value="1">1 bit (單色 / 黑白2色)</option>
+                <option value="8">8 bits (256色 / 灰階)</option>
+                <option value="16">16 bits (高彩 65,536色)</option>
+                <option value="24" selected>24 bits (全彩 True Color 1677萬色)</option>
+                <option value="32">32 bits (24位元全彩 + 8位元 Alpha透明)</option>
+              </select>
+            </div>
+
+            <div class="preset-btn-group">
+              <span class="preset-label">快速帶入題庫：</span>
+              <button type="button" class="preset-btn" onclick="setImgPreset(1024, 768, 24)">1024×768 全彩 (課本例題)</button>
+              <button type="button" class="preset-btn" onclick="setImgPreset(1920, 1080, 24)">1080P Full HD</button>
+              <button type="button" class="preset-btn" onclick="setImgPreset(800, 600, 8)">800×600 256色</button>
+            </div>
+
+            <!-- 計算結果與步驟展開 -->
+            <div class="calc-result-box">
+              <div class="result-label">計算結果：</div>
+              <div class="result-value" id="imgResultDisplay">2.25 MB</div>
+              <div class="result-details" id="imgResultSteps">
+                <!-- JS 動態生成算式 -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Calculator 2: 照片沖洗印刷尺寸與解析度換算器 -->
+        <div class="calc-card" id="calc-print">
+          <div class="calc-header">
+            <span class="calc-badge">題型 02</span>
+            <h3>印刷沖洗尺寸與 DPI 解析度換算</h3>
+            <p class="calc-formula">公式：$\text{總像素} = \text{英吋} \times \text{DPI}$</p>
+          </div>
+
+          <div class="calc-form">
+            <div class="calc-mode-switch">
+              <button type="button" class="mode-tab active" id="btnModePxToInch" onclick="switchPrintMode('pxToInch')">由像素算印刷英吋</button>
+              <button type="button" class="mode-tab" id="btnModeInchToPx" onclick="switchPrintMode('inchToPx')">由相片英吋算所需像素</button>
+            </div>
+
+            <div id="printFormFields">
+              <!-- JS 動態切換輸入欄位 -->
+            </div>
+
+            <div class="preset-btn-group">
+              <span class="preset-label">快速套用：</span>
+              <button type="button" class="preset-btn" onclick="setPrintPreset(4, 6, 300)">4×6 吋相片 300 DPI (經典例題)</button>
+              <button type="button" class="preset-btn" onclick="setPrintPreset(8, 10, 300)">8×10 吋放大相片 300 DPI</button>
+              <button type="button" class="preset-btn" onclick="setPrintPreset(1920, 1080, 72)">螢幕桌布 72 PPI</button>
+            </div>
+
+            <div class="calc-result-box">
+              <div class="result-label">換算結果：</div>
+              <div class="result-value" id="printResultDisplay">1200 × 1800 像素 (約 216 萬畫素)</div>
+              <div class="result-details" id="printResultSteps">
+                <!-- JS 動態生成算式 -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Calculator 3: 未壓縮音訊容量計算器 -->
+        <div class="calc-card" id="calc-audio">
+          <div class="calc-header">
+            <span class="calc-badge">題型 03</span>
+            <h3>未壓縮音訊 (WAV) 容量計算器</h3>
+            <p class="calc-formula">公式：$\text{Bytes} = (\text{取樣頻率 Hz} \times \text{位元深度} \times \text{聲道} \times \text{秒數}) \div 8$</p>
+          </div>
+
+          <div class="calc-form">
+            <div class="form-row">
+              <label for="audioSampleRate">取樣頻率 (Sampling Rate)</label>
+              <select id="audioSampleRate">
+                <option value="11025">11,025 Hz (語音品質)</option>
+                <option value="22050">22,050 Hz (AM廣播品質)</option>
+                <option value="44100" selected>44,100 Hz (標準 CD 音質 44.1 kHz)</option>
+                <option value="48000">48,000 Hz (專業數位錄音 48 kHz)</option>
+                <option value="96000">96,000 Hz (Hi-Res 高解析 96 kHz)</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <label for="audioBitDepth">量化深度 (Bit Depth)</label>
+              <select id="audioBitDepth">
+                <option value="8">8 bits (早期電話語音品質)</option>
+                <option value="16" selected>16 bits (標準 CD 品質)</option>
+                <option value="24">24 bits (錄音室等級品質)</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <label for="audioChannels">聲道數 (Channels)</label>
+              <select id="audioChannels">
+                <option value="1">單聲道 (Mono, 聲道數 = 1)</option>
+                <option value="2" selected>立體聲 (Stereo, 聲道數 = 2)</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <label for="audioMinutes">錄音時間 (分鐘)</label>
+              <div class="time-input-group">
+                <input type="number" id="audioMinutes" value="3" min="0" step="1">
+                <span>分</span>
+                <input type="number" id="audioSeconds" value="0" min="0" max="59" step="1">
+                <span>秒</span>
+              </div>
+            </div>
+
+            <div class="preset-btn-group">
+              <span class="preset-label">快速帶入題庫：</span>
+              <button type="button" class="preset-btn" onclick="setAudioPreset(44100, 16, 2, 3, 0)">3 分鐘 CD 立體聲 (段考經典題)</button>
+              <button type="button" class="preset-btn" onclick="setAudioPreset(44100, 16, 2, 2, 0)">2 分鐘 CD 立體聲</button>
+              <button type="button" class="preset-btn" onclick="setAudioPreset(22050, 8, 1, 1, 0)">1 分鐘 單聲道 22.05kHz 8bit</button>
+            </div>
+
+            <div class="calc-result-box">
+              <div class="result-label">計算結果：</div>
+              <div class="result-value" id="audioResultDisplay">約 30.28 MB</div>
+              <div class="result-details" id="audioResultSteps">
+                <!-- JS 動態生成算式 -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 視覺觀念實驗室 (Interactive Lab) -->
+    <section id="interactive-lab" class="content-section">
+      <div class="section-header">
+        <div class="section-badge">VISUAL LAB</div>
+        <h2 class="section-title">直觀觀念實驗室</h2>
+        <p class="section-subtitle">自己動手調調看，把抽象觀念變成肉眼可見的具體效果！</p>
+      </div>
+
+      <div class="lab-grid">
+        
+        <!-- Lab 1: 點陣圖 vs 向量圖放大破圖實驗 -->
+        <div class="lab-card">
+          <div class="lab-card-header">
+            <h3>🔬 實驗 1：點陣圖 vs 向量圖 放大對抗賽</h3>
+            <p>拉動縮放滑桿，親眼見證點陣圖的鋸齒破圖與向量圖的極致平滑！</p>
+          </div>
+          <div class="zoom-slider-wrap">
+            <label for="zoomSlider">放大倍率：<span id="zoomLevelText" class="font-bold text-cyan">100%</span></label>
+            <input type="range" id="zoomSlider" min="100" max="800" step="50" value="100">
+          </div>
+          <div class="zoom-preview-container">
+            <div class="zoom-box">
+              <div class="zoom-title">點陣圖 (Bitmap / 像素網格)</div>
+              <div class="canvas-viewport" id="bitmapViewport">
+                <canvas id="bitmapCanvas" width="220" height="180"></canvas>
+              </div>
+              <div class="zoom-caption text-danger">⚠️ 放大後邊緣鋸齒模糊、馬賽克浮現</div>
+            </div>
+            <div class="zoom-box">
+              <div class="zoom-title">向量圖 (Vector / 數學路徑)</div>
+              <div class="canvas-viewport" id="vectorViewport">
+                <svg id="vectorSvg" viewBox="0 0 220 180" width="220" height="180">
+                  <circle cx="110" cy="90" r="60" fill="url(#gradCyan)" stroke="#38bdf8" stroke-width="4"></circle>
+                  <polygon points="110,45 125,75 160,80 135,105 140,140 110,120 80,140 85,105 60,80 95,75" fill="#facc15"></polygon>
+                  <defs>
+                    <linearGradient id="gradCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#0284c7" />
+                      <stop offset="100%" stop-color="#0f172a" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+              <div class="zoom-caption text-success">✨ 放大 800% 依然銳利平滑不失真</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lab 2: RGB 光學加色混色實驗 -->
+        <div class="lab-card">
+          <div class="lab-card-header">
+            <h3>🌈 實驗 2：RGB 加色法 光學混色器</h3>
+            <p>調整 R、G、B 三原色光強度，觀察混色結果！全部調到 255 為純白！</p>
+          </div>
+          <div class="rgb-mixer-wrap">
+            <div class="rgb-controls">
+              <div class="rgb-slider-row">
+                <span class="rgb-label text-red">R (紅): <strong id="rVal">255</strong></span>
+                <input type="range" id="sliderR" min="0" max="255" value="255">
+              </div>
+              <div class="rgb-slider-row">
+                <span class="rgb-label text-green">G (綠): <strong id="gVal">80</strong></span>
+                <input type="range" id="sliderG" min="0" max="255" value="80">
+              </div>
+              <div class="rgb-slider-row">
+                <span class="rgb-label text-blue">B (藍): <strong id="bVal">180</strong></span>
+                <input type="range" id="sliderB" min="0" max="255" value="180">
+              </div>
+              <div class="rgb-quick-btns">
+                <button type="button" class="preset-btn" onclick="setRGB(255,255,255)">全開純白 (255,255,255)</button>
+                <button type="button" class="preset-btn" onclick="setRGB(255,255,0)">紅+綠=黃 (255,255,0)</button>
+                <button type="button" class="preset-btn" onclick="setRGB(0,255,255)">綠+藍=青 (0,255,255)</button>
+                <button type="button" class="preset-btn" onclick="setRGB(255,0,255)">紅+藍=洋紅 (255,0,255)</button>
+              </div>
+            </div>
+            <div class="rgb-preview-box">
+              <div class="color-circle" id="rgbColorCircle"></div>
+              <div class="hex-text" id="rgbHexDisplay">#FF50B4</div>
+              <div class="rgb-desc-text" id="rgbDescDisplay">RGB 加色混光效果</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lab 3: Photoshop 遮色片「黑遮白顯」模擬器 -->
+        <div class="lab-card">
+          <div class="lab-card-header">
+            <h3>🎭 實驗 3：Photoshop 遮色片「白顯、黑遮、灰半透」</h3>
+            <p>拉動遮色片灰階滑桿，模擬在圖層遮色片上塗抹顏色的通透效果！</p>
+          </div>
+          <div class="mask-demo-container">
+            <div class="mask-slider-row">
+              <label for="maskSlider">遮色片顏色（0 全黑 $\rightarrow$ 128 中灰 $\rightarrow$ 255 全白）：<strong id="maskValText">全白 (255)</strong></label>
+              <input type="range" id="maskSlider" min="0" max="255" value="255">
+            </div>
+            <div class="mask-stage">
+              <div class="mask-layer-under">
+                <div class="under-pattern"></div>
+                <span class="layer-tag">底層：透明棋盤格背景</span>
+              </div>
+              <div class="mask-layer-top" id="maskTopLayer">
+                <div class="badge-student">智光商職 資處一仁 專題素材</div>
+                <div class="mask-photo-content">
+                  <div class="star-graphic">🌟</div>
+                  <h4>上層主體圖層</h4>
+                  <p>遮色片塗黑時，此圖層會變透明而隱藏！</p>
+                </div>
+              </div>
+            </div>
+            <div class="mask-explanation" id="maskExpText">
+              目前狀態：遮色片為<strong>純白色</strong>，上層圖層 100% 完整顯示。
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 段考實戰刷題測驗系統 (Quiz Zone) -->
+    <section id="quiz-zone" class="content-section">
+      <div class="section-header">
+        <div class="section-badge">EXAM PRACTICE</div>
+        <h2 class="section-title">高一上學期 段考實戰刷題測驗</h2>
+        <p class="section-subtitle">精選 15 題高一資處科段考與統測經典題目，即時批改給詳解，測驗你的複習熟練度！</p>
+      </div>
+
+      <div class="quiz-container">
+        <!-- 測驗頂部儀表板 -->
+        <div class="quiz-dashboard">
+          <div class="quiz-progress-wrap">
+            <div class="quiz-progress-text">題號：<span id="currentQNum">1</span> / <span id="totalQNum">15</span></div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" id="quizProgressBar" style="width: 6.66%;"></div>
+            </div>
+          </div>
+          <div class="quiz-score-badge">目前得分：<span id="currentScore">0</span> 分</div>
+        </div>
+
+        <!-- 題目卡片本體 -->
+        <div class="question-card" id="questionCard">
+          <div class="q-category-tag" id="qCategory">多媒體概論</div>
+          <h3 class="q-title" id="qQuestionText">載入題目中...</h3>
+
+          <div class="options-group" id="optionsContainer">
+            <!-- JS 動態產生選項按鈕 -->
+          </div>
+
+          <!-- 即時詳解區 (點擊後顯示) -->
+          <div class="q-explanation-box" id="qExplanationBox" style="display: none;">
+            <div class="exp-title-row">
+              <span class="exp-status" id="expStatusText">回答正確！</span>
+            </div>
+            <div class="exp-content" id="expContentText">
+              解析內容
+            </div>
+          </div>
+
+          <div class="q-actions-row">
+            <button type="button" class="action-btn-outline" id="prevQBtn" style="display: none;">上一題</button>
+            <button type="button" class="action-btn-primary" id="nextQBtn" style="display: none;">下一題</button>
+            <button type="button" class="action-btn-primary" id="restartQuizBtn" style="display: none;">重新測驗</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 考前 10 分鐘秒殺口訣與防雷對照表 (Cheat Sheet) -->
+    <section id="cheat-sheet" class="content-section">
+      <div class="section-header">
+        <div class="section-badge">SPEED CHEAT SHEET</div>
+        <h2 class="section-title">考前 10 分鐘秒殺口訣與防雷對照表</h2>
+        <p class="section-subtitle">鐘聲響起前瞄一眼！高頻出題陷阱與必殺口訣全收錄。</p>
+      </div>
+
+      <div class="table-responsive">
+        <table class="data-table cheat-table">
+          <thead>
+            <tr>
+              <th style="width: 22%;">考點主題</th>
+              <th style="width: 43%;">秒殺口訣 / 核心一句話</th>
+              <th style="width: 35%;">常見出題陷阱</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>點陣圖 vs 向量圖</strong></td>
+              <td>點陣放大「破圖起毛邊」，向量數學「無限縮放皆清晰」</td>
+              <td><span class="text-danger">陷阱：</span>誤以為 SVG 是點陣圖。SVG 是標準向量格式！</td>
+            </tr>
+            <tr>
+              <td><strong>色彩模式原理</strong></td>
+              <td>RGB 是光、加色法、越加越亮（白）；CMYK 是油墨、減色法、越加越黑</td>
+              <td><span class="text-danger">陷阱：</span>印表機列印請用 CMYK，螢幕修圖請用 RGB。</td>
+            </tr>
+            <tr>
+              <td><strong>色彩深度換算</strong></td>
+              <td>8-bit 是 256 色，24-bit 是 1677 萬色全彩，32-bit 多了 Alpha 透明</td>
+              <td><span class="text-danger">陷阱：</span>算容量公式記得除以 8，因為 8 bits = 1 Byte！</td>
+            </tr>
+            <tr>
+              <td><strong>影像格式特性</strong></td>
+              <td>JPG 體積小但不能透明；PNG 支援 Alpha 透明；GIF 只能 256 色可動態</td>
+              <td><span class="text-danger">陷阱：</span>想做半透明網頁按鈕不能存成 JPG，要存 PNG。</td>
+            </tr>
+            <tr>
+              <td><strong>聲音三要素</strong></td>
+              <td>振幅看大聲小聲（響度），頻率看音調高低，波形看是哪種樂器（音色）</td>
+              <td><span class="text-danger">陷阱：</span>高音由頻率 (Hz) 決定，不是振幅！</td>
+            </tr>
+            <tr>
+              <td><strong>MIDI 格式</strong></td>
+              <td>MIDI 是數位樂譜、音符指令，不是聲音波形，檔案只有幾十 KB</td>
+              <td><span class="text-danger">陷阱：</span>錄製歌手唱歌人聲「不能」用 MIDI 儲存。</td>
+            </tr>
+            <tr>
+              <td><strong>取樣定理</strong></td>
+              <td>取樣頻率必須大於最高頻率的 2 倍（$20\text{ kHz} \times 2 = 40\text{ kHz} \rightarrow 44.1\text{ kHz}$）</td>
+              <td><span class="text-danger">陷阱：</span>取樣頻率越高音質越好，但檔案容量成正比暴增。</td>
+            </tr>
+            <tr>
+              <td><strong>創用 CC 限制</strong></td>
+              <td>姓名標示 (BY)、禁止改作 (ND)、非商用 (NC)、相同方式分享 (SA)</td>
+              <td><span class="text-danger">陷阱：</span><strong>ND 與 SA 互斥</strong>，絕不可同時出現！</td>
+            </tr>
+            <tr>
+              <td><strong>遮色片操作</strong></td>
+              <td>「白顯、黑遮、灰半透」</td>
+              <td><span class="text-danger">陷阱：</span>遮色片塗黑不是把圖塗黑，是把該區域「透明隱藏」。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="cheer-banner">
+        <h3>🎉 祝 智光商職 資處一仁 全體同學段考 All Pass 拿滿分！</h3>
+        <p>把每一次的練習化為實力，高一下與高二專題更得心應手！</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 頁腳 -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <strong>智光高級商工職業學校 · 資料處理科 一年仁班</strong>
+        <span>108 課綱商業與管理群｜多媒體製作與應用 互動學習手冊</span>
+      </div>
+      <div class="footer-right">
+        <a href="#topHeader" class="back-to-top">▲ 返回頂部</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript 腳本 -->
+  <script src="app.js"></script>
+</body>
+</html>
